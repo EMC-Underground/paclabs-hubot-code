@@ -13,7 +13,7 @@ module.exports = (robot) ->
     robot.logger.info "Data is: #{data}"
     robot.http("https://api.particle.io/v1/devices/events")
       .header('Content-Type': 'application/x-www-form-urlencoded')
-      .post(data) (err, res, body) ->
+      .post(encodeURIComponent(data)) (err, res, body) ->
         if err
           robot.logger.info "Encountered an error: #{err}"
           return
