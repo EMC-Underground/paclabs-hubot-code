@@ -10,6 +10,7 @@ module.exports = (robot) ->
     else
       data = JSON.stringify(contents.toString())
   robot.hear /shame/i, (msg) ->
+    robot.logger.info "Data is: #{data}"
     robot.http("https://api.particle.io/v1/devices/events")
       .header('access_token', '#{data.access_token}')
       .header('Content-Type', 'application/x-www-form-urlencoded')
