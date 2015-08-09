@@ -8,9 +8,9 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-module.exports = (robot) ->
-  robot.hear /shame/i, (res) ->
-    res.send "That's a true shame..."
+#module.exports = (robot) ->
+#  robot.hear /shame/i, (res) ->
+#    res.send "That's a true shame..."
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
