@@ -12,7 +12,7 @@ module.exports = (robot) ->
     })
     robot.http("https://api.particle.io/v1/devices/events")
       .header('Content-Type', 'application/json')
-      .post(date) (err, res, body) ->
+      .post(data) (err, res, body) ->
       if err
         robot.logger.info "Encountered an error: #{err}"
         return
