@@ -4,7 +4,7 @@ QS = require 'querystring'
 
 module.exports = (robot) ->
   robot.hear /shame/i, (msg) ->
-    fs.readFile shame.json, (err, contents) ->
+    fs.readFile "shame.json", (err, contents) ->
       if err
         robot.logger.info "Encountered an error: #{err}"
       else
