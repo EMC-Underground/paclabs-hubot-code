@@ -4,7 +4,7 @@ QS = require 'querystring'
 data = ""
 
 module.exports = (robot) ->
-  fs.readFile 'config.txt', (err, contents) ->
+  fs.readFile '/app/scripts/config.txt', (err, contents) ->
     if err
       robot.logger.info "Encountered an error: #{err}"
     else
