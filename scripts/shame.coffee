@@ -1,6 +1,8 @@
 fs = require 'fs'
 http = require 'http'
 QS = require 'querystring'
+data = ""
+
 fs.readFile "shame.json", (err, contents) ->
   if err
     robot.logger.info "Encountered an error: #{err}"
