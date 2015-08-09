@@ -12,7 +12,7 @@ module.exports = (robot) ->
   robot.hear /shame/i, (msg) ->
     robot.logger.info "Data is: #{data}"
     robot.http("https://api.particle.io/v1/devices/events")
-      .header('Content-Type', 'application/x-www-form-urlencoded')
+      .header('Content-Type': 'application/x-www-form-urlencoded')
       .post(data) (err, res, body) ->
         if err
           robot.logger.info "Encountered an error: #{err}"
