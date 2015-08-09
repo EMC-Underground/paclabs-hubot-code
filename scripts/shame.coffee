@@ -10,4 +10,4 @@ module.exports = (robot) ->
       else
         msg.send "We got back: #{body}"
 
-    msg.send "That's a true shame..."
+#    msg.send "That's a true shame..."
