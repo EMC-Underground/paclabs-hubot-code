@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-#
-=======
 fs = require 'fs'
 http = require 'http'
 QS = require 'querystring'
@@ -24,4 +21,3 @@ module.exports = (robot) ->
           robot.logger.info "We got back: #{body}"
     msg.send "What a true shame..."
 
->>>>>>> 58810d22f039c2fddd211c954e1e4b53f2f7af5d
