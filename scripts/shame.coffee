@@ -7,8 +7,8 @@ module.exports = (robot) ->
       name: "shamedingdingding",
       data: "such_shame",
       private: "false",
-      ttl: 60,
-      access_token: f3498b855f461374d78e9bb4e00fea1528c9f6ab
+      ttl: "60",
+      access_token: "f3498b855f461374d78e9bb4e00fea1528c9f6ab"
     })
     robot.http("https://api.particle.io/v1/devices/events")
       .header('Content-Type', 'application/x-www-form-urlencoded')
