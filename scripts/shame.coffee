@@ -13,9 +13,9 @@ module.exports = (robot) ->
     robot.http("https://api.particle.io/v1/devices/events")
       .header('Content-Type', 'application/json')
       .post(data) (err, res, body) ->
-      if err
-        robot.logger.info "Encountered an error: #{err}"
-        return
-      else
-        robot.logger.info "We got back: #{body}"
+        if err
+          robot.logger.info "Encountered an error: #{err}"
+          return
+        else
+          robot.logger.info "We got back: #{body}"
     msg.send "What a true shame..."
