@@ -1,7 +1,0 @@
-{
-  name: "shamedingdingding",
-  data: "such_shame",
-  private: "false",
-  ttl: 60
-  access_token: "<your token here>"
-}
