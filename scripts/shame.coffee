@@ -7,13 +7,14 @@ fs.readFile "shame.json", (err, contents) ->
   if err
     robot.logger.info "Encountered an error: #{err}"
   else
-    data = JSON.stringify(contents.toString())
+    data = contents
 
 module.exports = (robot) ->
   robot.hear /shame/i, (msg) ->
-    robot.http("https://api.particle.io/v1/devices/events")
+    robot.http("https://api.particle.io/v1/devices/events")i
+      .header('access_token', '#{data.access_token.toString()}'
       .header('Content-Type', 'application/x-www-form-urlencoded')
-      .post(data) (err, res, body) ->
+      .post(JSON.stringify(data.toString())) (err, res, body) ->
         if err
           robot.logger.info "Encountered an error: #{err}"
           return
