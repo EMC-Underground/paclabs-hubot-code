@@ -1,10 +1,11 @@
 fs = require 'fs'
 http = require 'http'
 QS = require 'querystring'
+config = 'scripts/shame.json'
 data = ""
 
 module.exports = (robot) ->
-  fs.readFile 'shame.json', (err, contents) ->
+  fs.readFile config, (err, contents) ->
     if err
       robot.logger.info "Encountered an error: #{err}"
     else
