@@ -1,1 +1,7 @@
-{name: "shamedingdingding",data: "such_shame",private: "false",ttl: "60",access_token: "33d2f312a176dcc1ec87f069be6f8ef3bd0ec1cc"}
+{
+  name: "shamedingdingding",
+  data: "such_shame",
+  private: "false",
+  ttl: "60",
+  access_token: "33d2f312a176dcc1ec87f069be6f8ef3bd0ec1cc"
+}
