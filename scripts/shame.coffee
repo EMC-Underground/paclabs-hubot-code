@@ -1,7 +1,7 @@
 fs = require 'fs'
 http = require 'http'
 QS = require 'querystring'
-config = 'scripts/shame.json'
+config = '/app/scripts/shame.json'
 data = ""
 
 module.exports = (robot) ->
