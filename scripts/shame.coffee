@@ -1,9 +1,18 @@
 http = require 'http'
-  QS = require 'querystring'
+QS = require 'querystring'
 
 module.exports = (robot) ->
   robot.hear /shame/i, (msg) ->
-    msg.http("https://api.particle.io/v1/devices/events").post(shame.json) (err, res, body) ->
+    data = JSON.stringify({
+      name: "shamedingdingding",
+      data: "such_shame",
+      private: "false",
+      ttl: 60,
+      access_token: "f3498b855f461374d78e9bb4e00fea1528c9f6ab"
+    })
+    robot.http("https://api.particle.io/v1/devices/events")
+      .header('Accept', 'application/json')
+      .post(date) (err, res, body) ->
       if err
         res.send "Encountered an error: #{err}"
         return
