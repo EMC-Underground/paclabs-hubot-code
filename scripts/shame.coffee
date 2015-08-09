@@ -14,8 +14,8 @@ module.exports = (robot) ->
       .header('Accept', 'application/json')
       .post(date) (err, res, body) ->
       if err
-        res.send "Encountered an error: #{err}"
+        robot.logger.info "Encountered an error: #{err}"
         return
       else
-        res.send "We got back: #{body}"
-
+        robot.logger.info "We got back: #{body}"
+    msg.send "What a true shame..."
