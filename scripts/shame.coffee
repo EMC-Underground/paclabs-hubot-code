@@ -10,6 +10,7 @@ fs.readFile "shame.json", (err, contents) ->
     data = JSON.stringify(contents.toString())
 
 module.exports = (robot) ->
+  robot.logger.info "#{data.access_token}"
   robot.hear /shame/i, (msg) ->
     robot.http("https://api.particle.io/v1/devices/events")
       .header('access_token', '#{data.access_token}')
