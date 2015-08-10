@@ -1,1 +1,1 @@
-?name=shamedingdingding&data=This_is_commander
+name=shamedingdingding&data=This_is_commander
