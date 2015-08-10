@@ -1,4 +1,4 @@
-$ ?= require 'jquery'
+$ = require 'jquery'
 fs = require 'fs'
 http = require 'http'
 QS = require 'querystring'
