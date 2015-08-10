@@ -1,4 +1,1 @@
-{
-  "name": "shamedingdingding",
-  "data": "This is commander"
-}
+?name=shamedingdingding&data=This_is_commander
