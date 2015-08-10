@@ -3,6 +3,7 @@ http = require 'http'
 QS = require 'querystring'
 data = ""
 
+
 module.exports = (robot) ->
   fs.readFile '/app/scripts/config.txt', (err, contents) ->
     if err
