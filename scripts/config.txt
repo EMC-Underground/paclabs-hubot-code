@@ -1,5 +1,4 @@
 {
-  name: 'shamedingdingding',
-  data: 'This is commander',
-  private: 'false'
+  "name": "shamedingdingding",
+  "data": "This is commander"
 }
