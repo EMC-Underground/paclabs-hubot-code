@@ -1,8 +1,12 @@
+EventSource = require('eventsource')
+http = require 'http'
+QS = require 'querystring'
+data = ""
+
 module.exports = (robot) ->
   eventSourceInitDict = 
     rejectUnauthorized: false
     headers: 'Authorization': 'Bearer 33d2f312a176dcc1ec87f069be6f8ef3bd0ec1cc'
-  EventSource = require('eventsource')
   es = new EventSource(uri, eventSourceInitDict)
   es.addEventListener 'notifyr/announce', ((event) ->
     #Function code goes here
