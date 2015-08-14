@@ -2,12 +2,13 @@ EventSource = require('eventsource')
 http = require 'http'
 QS = require 'querystring'
 data = ""
+url = "https://api.particle.io/v1/events" 
 
 module.exports = (robot) ->
   eventSourceInitDict = 
     rejectUnauthorized: false
     headers: 'Authorization': 'Bearer 33d2f312a176dcc1ec87f069be6f8ef3bd0ec1cc'
-  es = new EventSource('https://api.particle.io/v1/events', eventSourceInitDict)
+  es = new EventSource(url.toString(), eventSourceInitDict)
   es.addEventListener 'notifyr/announce', ((event) ->
     #Function code goes here
     data = JSON.stringify(event.data)
