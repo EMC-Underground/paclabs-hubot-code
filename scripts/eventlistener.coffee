@@ -1,6 +1,7 @@
-EventSource = require('eventsource')
+EventSource = require 'eventsource'
 http = require 'http'
 QS = require 'querystring'
+url = require 'url'
 data = ""
 addr = "https://api.particle.io/v1/events" 
 
