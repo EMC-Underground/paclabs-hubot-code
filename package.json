@@ -5,7 +5,6 @@
   "author": "JP Quicksall <john.quicksall@emc.com>",
   "description": "EXTERMINATE!",
   "dependencies": {
-    "eventsource": "^0.1.6",
     "hubot": "^2.13.2",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.1.5",
