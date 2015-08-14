@@ -2,6 +2,7 @@ EventSource = require('eventsource')
 http = require 'http'
 QS = require 'querystring'
 data = ""
+uri = "https://api.particle.io/v1/events"
 
 module.exports = (robot) ->
   eventSourceInitDict = 
