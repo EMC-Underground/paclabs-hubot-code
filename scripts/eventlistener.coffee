@@ -12,7 +12,7 @@ module.exports = (robot) ->
   es = new EventSource(addr.toString(), eventSourceInitDict)
   es.addEventListener 'notifyr/announce', ((event) ->
     #Function code goes here
-    data = JSON.stringify(event.data)
+    data = event.data
     robot.logger.info "This is the data we got...#{data}"
     robot.logger.info "This is the event type...#{event.type}"
     robot.logger.info "The core ID is -#{data.coreid}- and it's data is -#{data.data}"
