@@ -21,6 +21,6 @@ module.exports = (robot) ->
           robot.logger.info "Encountered an error: #{err}"
           return
         else
-          robot.logger.info "We got back: #{body}"
+          robot.logger.info "We got back success!"
     return
   ), false
