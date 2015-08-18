@@ -16,7 +16,8 @@ module.exports = (robot) ->
     robot.logger.info "This is the data we got...#{data}"
     robot.logger.info "This is the event type...#{event.type}"
     robot.logger.info "The core ID is -#{data.coreid}- and it's data is -#{data.data}"
-    robot.http("https://docs.google.com/forms/d/19QqJDceRyWT9zXypb_9ManeAI4qGDemjuTNEv0-cNW4/viewform")
+    robot.http("https://script.google.com/macros/s/AKfycbzD4duzxGlHqvMqlVu-apgWRE2l5GWn4tgWeJXUhMX2ivIOQHY/exec")
+      .header('Content-Type', 'application/x-www-form-urlencoded')
       .post("entry.571261089=#{data.coreid}&entry.1060543689=#{data.data}") (err, res, body) ->
         if err
           robot.logger.info "Encountered an error: #{err}"
