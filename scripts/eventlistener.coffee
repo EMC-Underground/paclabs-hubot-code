@@ -18,7 +18,7 @@ module.exports = (robot) ->
     robot.logger.info "The core ID is -#{data.coreid}- and it's data is -#{data.data}"
     robot.http("https://script.google.com/macros/s/AKfycbzD4duzxGlHqvMqlVu-apgWRE2l5GWn4tgWeJXUhMX2ivIOQHY/exec")
       .header('Content-Type', 'application/x-www-form-urlencoded')
-      .post("entry.571261089=#{data.coreid}&entry.1060543689=#{data.data}") (err, res, body) ->
+      .post("Core_ID=#{data.coreid}&Core_Data=#{data.data}") (err, res, body) ->
         if err
           robot.logger.info "Encountered an error: #{err}"
           return
