@@ -16,8 +16,8 @@ module.exports = (robot) ->
     robot.logger.info "This is the data we got...#{data}"
     robot.logger.info "This is the event type...#{event.type}"
     robot.logger.info "The core ID is -#{data.coreid}- and it's data is -#{data.data}"
-    robot.http("https://docs.google.com/forms/d/1bfiRlVXgWZ3tBGWH4jZWrs__4u0CxiGqZNqxKfRANt8/formResponse")
-      .post("entry_436001820=#{data.coreid}&entry_124394131=#{data.data}") (err, res, body) ->
+    robot.http("https://docs.google.com/forms/d/19QqJDceRyWT9zXypb_9ManeAI4qGDemjuTNEv0-cNW4/viewform")
+      .post("entry.571261089=#{data.coreid}&entry.1060543689=#{data.data}") (err, res, body) ->
         if err
           robot.logger.info "Encountered an error: #{err}"
           return
