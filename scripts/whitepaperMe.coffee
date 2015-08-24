@@ -56,6 +56,7 @@ whitepaperMe = (msg, basic_query, cb) ->
           return
         msg.send "I found something..."
         images = JSON.parse(body)
+        msg.send images
         images = images.responseData?.results
         if images?.length > 0
           msg.send "...and I got a response..."
