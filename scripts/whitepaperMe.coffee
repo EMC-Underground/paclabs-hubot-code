@@ -43,6 +43,7 @@ whitepaperMe = (msg, query, cb) ->
   else
     # Using deprecated Google image search API
     msg.send "Using deprecated Google search API"
+    msg.send "You are searching for #{query}"
     q = v: '1.0', q: query, safe: 'active'
     msg.http('https://ajax.googleapis.com/ajax/services/search/web')
       .query(q)
