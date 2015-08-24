@@ -8,13 +8,13 @@ whitepaperMe = (msg, query, cb) ->
   if googleCseId
     # Using Google Custom Search API
     googleApiKey = process.env.HUBOT_GOOGLE_CSE_KEY
-    query = query + " whitepaper"
+    completed_query = query + " whitepaper"
     if !googleApiKey
       msg.robot.logger.error "Missing environment variable HUBOT_GOOGLE_CSE_KEY"
       msg.send "Missing server environment variable HUBOT_GOOGLE_CSE_KEY."
       return
     q =
-      q: query,
+      q: completed_query,
       safe:'high',
       fields:'items(link)',
       cx: googleCseId,
@@ -29,7 +29,7 @@ whitepaperMe = (msg, query, cb) ->
         if res.statusCode isnt 200
           msg.send "Bad HTTP response :( #{res.statusCode}"
           msg.send "Trying old google call..."
-          oldGoogleCall (msg, query, cb)
+          oldGoogleCall (msg, completed_query, cb)
           return
         response = JSON.parse(body)
         if response?.items
