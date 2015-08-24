@@ -58,7 +58,8 @@ whitepaperMe = (msg, basic_query, cb) ->
         images = JSON.parse(body)
         images = images.responseData?.results
         if images?.length > 0
+          msg.send "...and I got a response..."
           image = images[1]
-          msg.send image.unescapedUrl
+          msg.send "...here we go: #{image.unescapedUrl}"
         else
           msg.send "Sorry, I found no results for '#{query}'."
