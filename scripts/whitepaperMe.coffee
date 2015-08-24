@@ -1,6 +1,6 @@
 module.exports = (robot) ->
   robot.respond /(white paper|whitepaper)( me)? (.*)/i, (msg) ->
-    whitepaperMe msg, msg.match[2], (url) ->
+    oldGoogleCall msg, msg.match[2], (url) ->
       msg.send url
 
 whitepaperMe = (msg, query, cb) ->
@@ -48,7 +48,8 @@ whitepaperMe = (msg, query, cb) ->
     return
 
 oldGoogleCall = (msg, query, cb) ->
-  q = v: '1.0', rsz: '8', q: query, safe: 'active'
+  cq = query + " whitepaper"
+  q = v: '1.0', rsz: '8', q: cq, safe: 'active'
   q.imgtype = 'animated' if typeof animated is 'boolean' and animated is true
   q.imgtype = 'face' if typeof faces is 'boolean' and faces is true
   msg.http('https://ajax.googleapis.com/ajax/services/search/images')
