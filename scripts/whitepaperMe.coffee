@@ -54,9 +54,11 @@ whitepaperMe = (msg, basic_query, cb) ->
         if res.statusCode isnt 200
           msg.send "Bad HTTP response :( #{res.statusCode}"
           return
+        msg.send "I found something..."
         images = JSON.parse(body)
         images = images.responseData?.results
         if images?.length > 0
           image = images[1]
+          msg.send image.unescapedUrl
         else
           msg.send "Sorry, I found no results for '#{query}'."
