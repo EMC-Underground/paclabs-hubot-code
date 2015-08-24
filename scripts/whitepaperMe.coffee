@@ -59,7 +59,7 @@ whitepaperMe = (msg, query, cb) ->
         msg.send "...here are all of the results...#{images}"
         if images?.length > 0
           msg.send "...and I got a response..."
-          image = images[2]
+          image = images[1]
           msg.send "...here we go: #{image.unescapedUrl}"
         else
           msg.send "Sorry, I found no results for '#{query}'."
