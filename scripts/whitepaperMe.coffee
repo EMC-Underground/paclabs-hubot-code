@@ -1,6 +1,6 @@
 module.exports = (robot) ->
   robot.respond /(white paper|whitepaper)( me)? (.*)/i, (msg) ->
-    whitepaperMe msg, msg.match[2]+" whitepaper", (url) ->
+    whitepaperMe msg, msg.match[2], (url) ->
       msg.send url
 
 whitepaperMe = (msg, query, cb) ->
@@ -8,6 +8,7 @@ whitepaperMe = (msg, query, cb) ->
   if googleCseId
     # Using Google Custom Search API
     googleApiKey = process.env.HUBOT_GOOGLE_CSE_KEY
+    query = query + " whitepaper"
     if !googleApiKey
       msg.robot.logger.error "Missing environment variable HUBOT_GOOGLE_CSE_KEY"
       msg.send "Missing server environment variable HUBOT_GOOGLE_CSE_KEY."
