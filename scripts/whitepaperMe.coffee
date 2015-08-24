@@ -1,6 +1,6 @@
 module.exports = (robot) ->
   robot.respond /(white paper|whitepaper)( me)? (.*)/i, (msg) ->
-    whitepaperMe msg, msg.match[2], (url) ->
+    whitepaperMe msg, msg.match[3], (url) ->
       msg.send url
 
 
