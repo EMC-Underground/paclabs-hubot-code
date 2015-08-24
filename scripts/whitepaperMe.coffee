@@ -42,8 +42,7 @@ whitepaperMe = (msg, query, cb) ->
           ) error for error in response.error.errors if response.error?.errors
   else
     # Using deprecated Google image search API
-    msg.send "Using deprecated Google search API"
-    msg.send "You are searching for #{query}"
+    msg.send "You are searching for #{query}..."
     q = v: '1.0', q: query, safe: 'active'
     msg.http('https://ajax.googleapis.com/ajax/services/search/web')
       .query(q)
@@ -54,13 +53,11 @@ whitepaperMe = (msg, query, cb) ->
         if res.statusCode isnt 200
           msg.send "Bad HTTP response :( #{res.statusCode}"
           return
-        msg.send "I found something..."
         images = JSON.parse(body)
         images = images.responseData?.results
-        msg.send "...here are all of the results...#{images}"
         if images?.length > 0
-          msg.send "...and I got a response..."
           image = images[1]
-          msg.send "...here we go: #{image.unescapedUrl}"
+          msg.send "...here we go: #{image.titleNoFormatting}"
+          msg.send "URL: #{image.unescapedUrl}" 
         else
           msg.send "Sorry, I found no results for '#{query}'."
