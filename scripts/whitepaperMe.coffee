@@ -45,8 +45,6 @@ whitepaperMe = (msg, basic_query, cb) ->
     # Using deprecated Google image search API
     msg.send "Using deprecated Google image search API"
     q = v: '1.0', rsz: '8', q: query, safe: 'active'
-    q.imgtype = 'animated' if typeof animated is 'boolean' and animated is true
-    q.imgtype = 'face' if typeof faces is 'boolean' and faces is true
     msg.http('https://ajax.googleapis.com/ajax/services/search/web')
       .query(q)
       .get() (err, res, body) ->
