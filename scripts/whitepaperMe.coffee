@@ -29,7 +29,7 @@ whitepaperMe = (msg, query, cb) ->
         if res.statusCode isnt 200
           msg.send "Bad HTTP response :( #{res.statusCode}"
           msg.send "Trying old google call..."
-          oldGoogleCall (msg, completed_query, cb)
+          oldGoogleCall msg, completed_query, (cb)
           return
         response = JSON.parse(body)
         if response?.items
