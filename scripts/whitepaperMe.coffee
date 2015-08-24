@@ -4,8 +4,7 @@ module.exports = (robot) ->
       msg.send url
 
 
-whitepaperMe = (msg, basic_query, cb) ->
-  query = basic_query + " whitepaper"
+whitepaperMe = (msg, query, cb) ->
   googleCseId = process.env.HUBOT_GOOGLE_CSE_ID
   if googleCseId
     # Using Google Custom Search API
