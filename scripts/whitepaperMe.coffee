@@ -43,8 +43,8 @@ whitepaperMe = (msg, basic_query, cb) ->
           ) error for error in response.error.errors if response.error?.errors
   else
     # Using deprecated Google image search API
-    msg.send "Using deprecated Google image search API"
-    q = v: '1.0', rsz: '8', q: query, safe: 'active'
+    msg.send "Using deprecated Google search API"
+    q = v: '1.0', q: query, safe: 'active'
     msg.http('https://ajax.googleapis.com/ajax/services/search/web')
       .query(q)
       .get() (err, res, body) ->
