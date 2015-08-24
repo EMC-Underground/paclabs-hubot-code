@@ -43,7 +43,7 @@ whitepaperMe = (msg, basic_query, cb) ->
           ) error for error in response.error.errors if response.error?.errors
   else
     # Using deprecated Google image search API
-    robot.logger.info "Using deprecated Google image search API"
+    msg.send "Using deprecated Google image search API"
     q = v: '1.0', rsz: '8', q: query, safe: 'active'
     q.imgtype = 'animated' if typeof animated is 'boolean' and animated is true
     q.imgtype = 'face' if typeof faces is 'boolean' and faces is true
