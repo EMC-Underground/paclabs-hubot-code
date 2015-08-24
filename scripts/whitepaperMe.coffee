@@ -14,7 +14,7 @@ whitepaperMe = (msg, query, cb) ->
       return
     q =
       q: query,
-      searchType:'image',
+      searchType:'web',
       safe:'high',
       fields:'items(link)',
       cx: googleCseId,
