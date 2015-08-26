@@ -10,7 +10,7 @@ module.exports = (robot) ->
       robot.logger.info "Encountered an error: #{err}"
     else
       data = contents.toString()
-  robot.respond /shame/i, (msg) ->
+  robot.hear /shame/i, (msg) ->
     data = "name=shamedingdingding&data=#{msg.message.user.name} made me shame" 
     robot.logger.info "Data is: #{data}"
     robot.http("https://api.particle.io/v1/devices/events/")
