@@ -4,7 +4,7 @@ qs = require 'querystring'
 var labUsers
 
 module.exports = (robot) ->
-  loadUsers
+#  loadUsers
   robot.hear /getToken/i, (msg) ->
     unless robot.auth.isAdmin msg.message.user
       msg.reply "Sorry, only admins can refresh the token."
