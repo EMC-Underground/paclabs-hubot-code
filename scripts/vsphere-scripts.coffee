@@ -7,7 +7,7 @@ module.exports = (robot) ->
     data = {"username":"administrator@vshpere.local","password":"Iamadmin!","tenant":"vshpere.local"}
     robot.http("https://vcac.bellevue.lab/identity/api/tokens")
       .header('Content-Type', 'application/json')
-      .post(data) (err, res, body) ->
+      .post(JSON.stringify(data)) (err, res, body) ->
         if err
           robot.logger.info "Encountered an error: #{err}"
           return
