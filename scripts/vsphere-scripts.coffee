@@ -1,7 +1,6 @@
 fs = require 'fs'
 http = require 'http'
 qs = require 'querystring'
-var labUsers
 
 module.exports = (robot) ->
   robot.hear /getToken/i, (msg) ->
