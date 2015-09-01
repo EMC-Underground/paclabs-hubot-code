@@ -1,5 +1,6 @@
 fs = require 'fs'
 http = require 'http'
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
 
 module.exports = (robot) ->
   robot.respond /token/i, (msg) ->
