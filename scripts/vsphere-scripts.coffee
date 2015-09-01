@@ -4,20 +4,11 @@ qs = require 'querystring'
 var labUsers
 
 module.exports = (robot) ->
-#  loadUsers
   robot.hear /getToken/i, (msg) ->
     unless robot.auth.isAdmin msg.message.user
       msg.reply "Sorry, only admins can refresh the token."
     else
       getToken robot
-
-          
-loadUsers = () ->
-  fs.readFile './scripts/users.json', (err, contents) ->
-    if err
-      robot.logger.info "Encountered an error: #{err}"
-    else
-      labUsers = JSON.parse(contents)
 
 getToken = (robot) ->
   robot.http("https://vcac.bellevue.lab/api/tokens
