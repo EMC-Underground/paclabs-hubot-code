@@ -13,6 +13,15 @@ module.exports = (robot) ->
           return
         else
           robot.logger.info "We got back: #{body}"
-          fs.writeFile "./scripts/authToken.json", JSON.stringify(body), (error) ->
+          fs.writeFile "./scripts/authToken.json", JSON.parse(body), (error) ->
             if error
               robot.logger.info "Encounterd an error: #{error}"
+
+  robot.respond /status/i, (msg) ->
+    fs.readFile './scripts/authToken.json', (err, data) ->
+      if err
+        robot.logger.info "Encountered an error: #{err}"
+      else
+        authToken = data.id
+    robot.logger.info "We have this id: #{authToken}"
+
