@@ -3,9 +3,10 @@ http = require 'http'
 
 module.exports = (robot) ->
   robot.respond /token/i, (msg) ->
+    data = {"username":"administrator@vshpere.local","password":"Iamadmin!","tenant":"vshpere.local"}
     robot.http("https://vcac.bellevue.lab/api/tokens")
       .header('Content-Type', 'application/json')
-      .post("{"username":"administrator@vshpere.local","password":"Iamadmin!","tenant":"vshpere.local"}") (err, res, body) ->
+      .post(data) (err, res, body) ->
         if err
           robot.logger.info "Encountered an error: #{err}"
           return
