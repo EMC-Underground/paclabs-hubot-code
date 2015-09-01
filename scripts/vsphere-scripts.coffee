@@ -1,6 +1,5 @@
 fs = require 'fs'
 http = require 'http'
-qs = require 'querystring'
 
 module.exports = (robot) ->
   robot.hear /getToken/i, (msg) ->
