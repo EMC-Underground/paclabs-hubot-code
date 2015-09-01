@@ -1,3 +1,5 @@
+fs = require 'fs'
+http = require 'http'
 
 module.exports = (robot) ->
   robot.respond /token/i, (msg) ->
