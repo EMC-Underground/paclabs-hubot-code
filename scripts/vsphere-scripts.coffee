@@ -4,7 +4,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
 
 module.exports = (robot) ->
   robot.respond /token/i, (msg) ->
-    data = {"username":"administrator@vshpere.local","password":"Iamadmin!","tenant":"vshpere.local"}
+    data = {"username":"administrator@vsphere.local","password":"Iamadmin!","tenant":"vsphere.local"}
     robot.http("https://vcac.bellevue.lab/identity/api/tokens")
       .header('Content-Type', 'application/json')
       .post(JSON.stringify(data)) (err, res, body) ->
