@@ -1,6 +1,7 @@
 fs = require 'fs'
 http = require 'http'
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
+authToken = ""
 
 module.exports = (robot) ->
   robot.respond /token/i, (msg) ->
@@ -24,4 +25,4 @@ module.exports = (robot) ->
       else
         authToken = data.id
     robot.logger.info "We have this id: #{authToken}"
-
+    
