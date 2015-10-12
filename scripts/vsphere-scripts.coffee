@@ -26,7 +26,7 @@ data = {}
 
 fs.readFile './v-config.json', (err, contents) ->
   if err
-    robot.logger.info "Encountered an error: #{err}"
+    console.log "Encountered an error: #{err}"
   else
     data = JSON.parse(contents.toString())
 

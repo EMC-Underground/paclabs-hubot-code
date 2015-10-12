@@ -23,11 +23,6 @@ QS = require 'querystring'
 data = ""
 
 module.exports = (robot) ->
-  fs.readFile './scripts/config.txt', (err, contents) ->
-    if err
-      robot.logger.info "Encountered an error: #{err}"
-    else
-      data = contents.toString()
   robot.hear /shame/i, (msg) ->
     data = "name=shamedingdingding&data=#{msg.message.user.name} made me shame" 
     robot.logger.info "Data is: #{data}"

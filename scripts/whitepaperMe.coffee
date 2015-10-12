@@ -1,3 +1,20 @@
+# Description:
+#    Similar functionallity to image me, this instead searches for papers and websites on the topic
+#
+# Dependencies:
+#    "hubot-google-images":"^0.1.5"
+#
+# Configuration:
+#    NONE
+#
+# Commands:
+#    hubot whitepaper me <query> - Searches for the query
+#
+# Notes:
+#
+# Author:
+#   quickjp2
+
 module.exports = (robot) ->
   robot.respond /(white paper|whitepaper)( me)? (.*)/i, (msg) ->
     whitepaperMe msg, msg.match[3], (url) ->
