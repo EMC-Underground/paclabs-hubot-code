@@ -1,3 +1,21 @@
+# Description:
+#    Allows you to 'shame' people in chat
+#
+# Dependencies:
+#    NONE
+#
+# Configuration:
+#    NONE
+#
+# Commands:
+#    shame - shames
+#
+# Notes:
+#    This only sends an event to the particle cloud. For full 'shaming' capabilities, please see https://github.com/bkvarda/cersei.
+#
+# Author:
+#   quickjp2
+
 (($) ->) 'jquery'
 fs = require 'fs'
 http = require 'http'
@@ -22,32 +40,6 @@ module.exports = (robot) ->
           return
         else
           robot.logger.info "We got back: #{body}"
-
-    data = "name=iblamecraig&data=The commander blames craig!"
-    robot.logger.info "Data is: #{data}"
-    robot.http("https://api.particle.io/v1/devices/events/")
-      .header('Authorization', 'Bearer 33d2f312a176dcc1ec87f069be6f8ef3bd0ec1cc')
-      .header('Content-Type', 'application/x-www-form-urlencoded')
-      .post(data) (err, res, body) ->
-        if err
-          robot.logger.info "Encountered an error: #{err}"
-          return
-        else
-          robot.logger.info "We got back: #{body}"
-
-
-# jquery ajax
-#   $.ajax
-#     url: 'https://api.particle.io/v1/devices/events/'
-#     type: 'post'
-#     data:
-#       name: 'shamedingdingding'
-#       data: 'This is commander bot'
-#     headers: Authorization: 'Bearer 33d2f312a176dcc1ec87f069be6f8ef3bd0ec1cc'
-#     dataType: 'x-www-form-urlencoded'
-#     success: (data) ->
-#       console.info data
-
-# Send a message to the chat client
+    # Send a message to the chat client
     msg.send "What a true shame..."
 

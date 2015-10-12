@@ -1,3 +1,18 @@
+# Description:
+#
+# Dependencies:
+#
+# Configuration:
+#
+# Commands:
+#
+# Notes:
+#
+# Author:
+#   quickjp2
+
+
+
 EventSource = require 'eventsource'
 http = require 'http'
 QS = require 'querystring'
