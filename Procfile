@@ -1,1 +1,1 @@
-web: ./startBot.coffee
+web: coffee ./startBot.coffee
