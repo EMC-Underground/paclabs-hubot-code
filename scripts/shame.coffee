@@ -38,3 +38,16 @@ module.exports = (robot) ->
     # Send a message to the chat client
     msg.send "What a true shame..."
 
+  robot.respond /notify/i, (msg) ->
+    data = "name=JPQsendnotifyr&data=#{msg.message.user.name} is testing notifyr"
+    robot.http("https://api.particle.io/v1/devices/events/")
+      .header('Authorization', 'Bearer 33d2f312a176dcc1ec87f069be6f8ef3bd0ec1cc')
+      .header('Content-Type', 'application/x-www-form-urlencoded')
+      .post(data) (err, res, body) ->
+        if err
+          robot.logger.info "Encountered an error: #{err}"
+          return
+        else
+          robot.logger.info "We got back: #{body}"
+    msg.send "This was sent #{data}"
+    robot.logger.info "This was sent #{data}"

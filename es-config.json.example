@@ -1,5 +1,0 @@
-{
-  "particle-url":"https://api.particle.io/v1/events",
-  "google-sheet-url":"<url to your google sheet>",
-  "auth-token":"<particle cloud access token>"
-}

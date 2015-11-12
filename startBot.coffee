@@ -19,14 +19,13 @@ fs.readFile './env-vars.json', (err, contents) ->
     else
       # myObject is not "empty"
       for key,value of config
-        console.log key + " is " + value
         process.env["#{key}"] = value
 
     # Start hubot
     hubot = cp.spawn "./bin/hubot", ["-a","slack"], {cwd: undefined, env:process.env}
     
     hubot.stdout.on 'data', (data) -> 
-      console.log('stdout: ' + data)
+      console.log("stdout: "+data)
     console.log(hubot.pid)
     
     hubot.on "exit", ->
