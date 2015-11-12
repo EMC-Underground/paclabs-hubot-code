@@ -1,0 +1,6 @@
+---
+applications:
+- name: commander
+  memory: 2G
+  buildpack: nodejs_buildpack
+  command: coffee ./startBot.coffee
