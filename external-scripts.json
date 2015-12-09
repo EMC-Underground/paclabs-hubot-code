@@ -10,6 +10,5 @@
   "hubot-shipit",
   "hubot-google-images",
   "hubot-auth",
-  "hubot-vsphere-commands",
-  "hubot-particle-listener"
+  "hubot-vsphere-commands"
 ]
