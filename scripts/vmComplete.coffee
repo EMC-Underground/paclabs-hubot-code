@@ -29,7 +29,7 @@ module.exports = (robot) ->
   robot.router.post '/hubot/host/complete', (req, res) ->
 
     data   = if req.body.payload? then JSON.parse req.body.payload else req.body
-    user = commander-chat
+    user = "commander-chat"
     text = data.text
 
 
