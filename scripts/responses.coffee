@@ -22,4 +22,5 @@ module.exports = (robot) ->
     msg.send "Why thank you, I aim to please my SE Team. Also let my creator JP know that I am doing well!"
   robot.hear /sandwich/i, (msg) ->
     msg.send "Did someone say sandwich?"
-  
+  robot.hear /hi (/w+)/i, (msg) ->
+    msg.send "Well hello there @#{msg.message.user.name}"  
