@@ -26,6 +26,12 @@ module.exports = (robot) ->
 
     res.send 'OK'
 
+  robot.router.post 'hubot/vm/status', (req, res) ->
+    data = if req.body.payload? then JSON.parse req.body.payload else req.body
+    status = data.status
+    robot.send {room: "commander-chat"}, "#{status}"
+    res.send 'OK'
+
   robot.router.post '/hubot/host/complete', (req, res) ->
 
     data   = if req.body.payload? then JSON.parse req.body.payload else req.body
