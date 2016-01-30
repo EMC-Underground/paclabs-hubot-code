@@ -46,7 +46,7 @@ module.exports = (robot) ->
   ##################################
   # Receive node status
   ##################################
-  robot.router.post 'hubot/node/status', (req, res) ->
+  robot.router.post '/hubot/node/status', (req, res) ->
     # Load ops channel from brain or use default
     channel = robot.brain.get('opsChan') or "commander-chat"
 
@@ -54,11 +54,11 @@ module.exports = (robot) ->
     data = if req.body.payload? then JSON.parse req.body.payload else req.body
 
     # If there is a user, send them the status update too
-    if data.user not "None"
+    if data.user isnt "None"
       robot.send {room: data.user}, "#{data.status}"
 
     # If a user's vm is done, don't output vm IP to ops channel, but still provide status
-    if data.state is "installed" and data.node-type is "virtual
+    if data.state is "installed" and data['node-type'] is "virtual"
       robot.send {room: channel}, "#{data.user}'s vm is has completed os install"
 
     # Everything else is sent straight into the ops channel
