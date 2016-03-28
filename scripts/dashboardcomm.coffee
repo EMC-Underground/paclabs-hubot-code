@@ -25,12 +25,12 @@ module.exports = (robot) ->
     data = { gdun: account}
     robot.http("http://dashupdater.bellevuelab.isus.emc.com/dashboard/")
       .header('Content-Type', 'application/json')
-      .post(JSON.stringify(data)) (err, res, body) ->
+      .put(JSON.stringify(data)) (err, res, body) ->
         if err
           robot.logger.info "Encountered an error: #{err}"
           return
         else
           robot.logger.info "We got back: #{body}"
-          msg.send JSON.stringify(body, null, 2)
+          msg.send body
 
 
