@@ -1,5 +1,5 @@
 ---
 applications:
 - name: commander
-  memory: 2G
+  memory: 1G
   buildpack: nodejs_buildpack
