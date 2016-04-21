@@ -25,4 +25,12 @@ module.exports = (robot) ->
   robot.hear /hi (\w+)/i, (msg) ->
     name = msg.match[1]
     if name is "commander"
-      msg.send "Well hello there @#{msg.message.user.name}"  
+      msg.send "Well hello there @#{msg.message.user.name}"
+
+  # Send periodic message to slack to keep self alive
+  cronJob = require('cron').CronJob
+  tz = 'America/Los_Angeles'
+  new cronJob('0 0 6 * * 1-7', stayingAlive, null, true, tz)
+
+  stayingAlive ->
+    robot.send {room: "commander-chat"}, "STAYING ALIVE!!"
