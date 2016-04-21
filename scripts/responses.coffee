@@ -32,5 +32,5 @@ module.exports = (robot) ->
   tz = 'America/Los_Angeles'
   new cronJob('0 0 6 * * 1-7', stayingAlive, null, true, tz)
 
-  stayingAlive ->
+  stayingAlive = ->
     robot.send {room: "commander-chat"}, "STAYING ALIVE!!"
