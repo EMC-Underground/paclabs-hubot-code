@@ -27,10 +27,9 @@ module.exports = (robot) ->
     if name is "commander"
       msg.send "Well hello there @#{msg.message.user.name}"
 
-  # Send periodic message to slack to keep self alive
-  cronJob = require('cron').CronJob
-  tz = 'America/Los_Angeles'
-  new cronJob('0 0 6 * * 1-7', stayingAlive, null, true, tz)
-
-  stayingAlive = ->
-    robot.send {room: "commander-chat"}, "STAYING ALIVE!!"
+  robot.router.post '/hubot/alive', (req, res) ->
+    data = if req.body.payload? then JSON.parse req.body.payload else req.body
+    user = data.room
+    text = data.message
+    robot.send {room: user}, "#{text}"
+    res.send 'OK'
