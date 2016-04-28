@@ -30,7 +30,7 @@ module.exports = (robot) ->
     robot.send {room: user}, "You're vm is done. Please ssh into #{ip} using your netid."
     res.send 'OK'
 
-  robot.router.post 'hubot/vm/status', (req, res) ->
+  robot.router.post '/hubot/vm/status', (req, res) ->
     data = if req.body.payload? then JSON.parse req.body.payload else req.body
     status = data.status
     robot.send {room: "commander-chat"}, "#{status}"
