@@ -30,7 +30,8 @@ module.exports = (robot) ->
   # Send periodic message to slack to keep self alive
   cronJob = require('cron').CronJob
   tz = 'America/Los_Angeles'
-  new cronJob('0 0 6 * * 1-7', stayingAlive, null, true, tz)
+  new cronJob('00 41 13 * * 0-6', stayingAlive, null, true, 'America/Los_Angeles')
 
   stayingAlive = ->
-    robot.send {room: "commander-chat"}, "STAYING ALIVE!!"
+    robot.logger.info "Ran the cron message"
+    robot.messageRoom "#commander-chat", "STAYING ALIVE!!"
