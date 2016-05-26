@@ -31,5 +31,5 @@ module.exports = (robot) ->
     data = if req.body.payload? then JSON.parse req.body.payload else req.body
     user = data.room
     text = data.message
-    robot.send {room: user}, "#{text}"
+    robot.send {room: user}, text
     res.send 'OK'
