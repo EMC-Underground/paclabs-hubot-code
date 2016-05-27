@@ -29,7 +29,7 @@ module.exports = (robot) ->
 
   robot.router.post '/hubot/alive', (req, res) ->
     data = if req.body.payload? then JSON.parse req.body.payload else req.body
-    user = data.room
+    user = "#{data.room}"
     text = ""
     text = data.message
     robot.send {room: user}, text
