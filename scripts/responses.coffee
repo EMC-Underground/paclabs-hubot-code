@@ -41,3 +41,10 @@ module.exports = (robot) ->
     text = data.message
     robot.send {room: "jenkins"}, "Message from Jenkins: #{text}"
     res.send 'OK'
+
+  robot.router.post '/hubot/ops-con-proxy', (req, res) ->
+    data = if req.body.payload? then JSON.parse req.body.payload else req.body
+    text = ""
+    text = data.message
+    robot.send {room: "ops-con-proxy"}, "Message from OCP: #{text}"
+    res.send 'OK'
