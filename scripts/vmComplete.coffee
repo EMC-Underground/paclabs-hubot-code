@@ -22,12 +22,12 @@
 #   quickjp2
 
 module.exports = (robot) ->
-  
+
   robot.router.post '/hubot/vm/complete', (req, res) ->
     data   = if req.body.payload? then JSON.parse req.body.payload else req.body
     user = data.user
     ip = data.ipaddr
-    robot.send {room: user}, "You're vm is done. Please ssh into #{ip} using your netid."
+    robot.send {room: user}, "You're vm is done. Please ssh into #{ip} using ubuntu/insecure."
     res.send 'OK'
 
   robot.router.post '/hubot/vm/status', (req, res) ->
