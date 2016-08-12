@@ -21,7 +21,8 @@
     "hubot-scripts": "^2.16.1",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.4.1",
-    "hubot-vsphere-commands": ">=1.5.0"
+    "hubot-vsphere-commands": ">=1.5.0",
+    "hubot-jenkins-slack": ">=0.0.2"
   },
   "engines": {
     "node": "0.12.x",
