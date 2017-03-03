@@ -1,3 +1,4 @@
 [
- "reload.coffee"
+ "get_wwn",
+  "reload.coffee"
 ]
