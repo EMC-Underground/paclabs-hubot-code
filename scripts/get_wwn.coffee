@@ -13,13 +13,13 @@ module.exports = (robot) ->
         when "vmax", "VMAX", "symmetrix", "symm", "Symmetrix" 
             array_type = "symmetrix"
             api_url = "http://getwwn.bellevuelab.isus.emc.com/#{array_type}/#{serial_num}"
-            break_line = "-----------------------------------------------------------------------------"
+            break_line = "============================================================================="
             
         when "xtremio", "XTremIO", "xio", "XIO" 
             array_type = "xtremio"
             num_bricks = "8"
             api_url = "http://getwwn.bellevuelab.isus.emc.com/#{array_type}/#{serial_num}/#{num_bricks}"             
-            break_line = "----------------------------------------------------------------------------------------------------------"
+            break_line = "=========================================================================================================="
     msg.http(api_url)
       .get() (err, res, body) ->
         try
@@ -29,9 +29,9 @@ module.exports = (robot) ->
           msgOutput = msgOutput + break_line
           msg.send msgOutput 
           if array_type is "symmetrix"
-              msg.send stringTable.create(json.wwns, {headers: ['director', 'port', 'wwpn', 'iqn']})
+              msg.send stringTable.create(json.wwns, {headerSeparator: '=', headers: ['director', 'port', 'wwpn', 'iqn']})
           else
-              msg.send stringTable.create(json.wwns, {headers: ['brick', 'controller', 'port', 'wwpn', 'iqn']})
+              msg.send stringTable.create(json.wwns, {headerSeparator: '=', headers: ['brick', 'controller', 'port', 'wwpn', 'iqn']})
           msg.send break_line + "\n"
                     
         catch error
