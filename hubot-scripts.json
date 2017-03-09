@@ -1,4 +1,7 @@
 [
  "get_wwn",
+ "get_siteid",
+ "get_ib",
+ "get_srs",
   "reload.coffee"
 ]
