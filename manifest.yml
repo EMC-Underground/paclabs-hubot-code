@@ -1,5 +1,5 @@
 ---
 applications:
-- name: commander
+- name: dashi
   memory: 1G
   buildpack: nodejs_buildpack

@@ -9,7 +9,6 @@
   "hubot-rules",
   "hubot-shipit",
   "hubot-google-images",
-  "hubot-auth",
   "hubot-vsphere-commands",
   "hubot-int-dashboard-chat-commands",
   "hubot-jenkins-slack"

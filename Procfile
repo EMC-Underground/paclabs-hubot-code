@@ -1,1 +1,1 @@
-web: coffee ./startBot.coffee
+web: bin/hubot --adapter slack

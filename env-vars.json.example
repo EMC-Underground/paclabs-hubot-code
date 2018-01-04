@@ -1,5 +1,0 @@
-{
-  "HUBOT_AUTH_ADMIN":"<Slack user name for the admin>",
-  "HUBOT_SLACK_TOKEN":"<Slack API token>",
-  "HUBOT_GOOGLE_CSE_KEY":"<CSE Key>"
-}

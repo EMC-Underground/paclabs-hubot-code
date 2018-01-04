@@ -12,14 +12,14 @@ module.exports = (robot) ->
     switch array_type
         when "vmax", "VMAX", "symmetrix", "symm", "Symmetrix" 
             array_type = "symmetrix"
-            api_url = "http://getwwn.bellevuelab.isus.emc.com/#{array_type}/#{serial_num}"
+            api_url = "http://getwwn.apps.paclabs.se.lab.emc.com/#{array_type}/#{serial_num}"
             break_line = "============================================================================="
             tbl_format = {headerSeparator: '=', headers: ['director', 'port', 'wwpn', 'iqn']}
             
         when "xtremio", "XTremIO", "xio", "XIO" 
             array_type = "xtremio"
             num_bricks = "8"
-            api_url = "http://getwwn.bellevuelab.isus.emc.com/#{array_type}/#{serial_num}/#{num_bricks}"             
+            api_url = "http://getwwn.apps.paclabs.se.lab.emc.com/#{array_type}/#{serial_num}/#{num_bricks}"             
             break_line = "=========================================================================================================="
             tbl_format = {headerSeparator: '=', headers: ['brick', 'controller', 'port', 'wwpn', 'iqn']}
 

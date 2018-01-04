@@ -7,7 +7,7 @@ stringTable = require('string-table')
 module.exports = (robot) ->
   robot.respond /srs (.*)/i, (msg) ->
     cust_name = escape(msg.match[1])
-    api_url = "http://pnwreport.bellevuelab.isus.emc.com/api/srs/#{cust_name}"
+    api_url = "http://pnwreport.pcf.paclabs.se.lab.emc.com/api/srs/#{cust_name}"
     break_line = "============================================================================="
     tbl_format = {headerSeparator: '=', headers: ['PARTY_NAME', 'PARTY_NUMBER', 'SR', 'SR_STATUS', 'SEV', 'SERIAL_NUMBER', 'PRODUCT_DESCRIPTION']}
             
