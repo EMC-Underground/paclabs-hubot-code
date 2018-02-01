@@ -16,12 +16,12 @@ module.exports = (robot) ->
       .get() (err, res, body) ->
         try
           json = JSON.parse(body)          
-          msgOutput = "\n" + break_line + "\n"
+          msgOutput = "'\n" + break_line + "\n"
           #msgOutput = msgOutput + "| GDUNS Name: #{json[1].["Global Duns Name"]}     |   Placeholder               \n"
           #msgOutput = msgOutput + break_line
           #msgOutput = msgOutput + "\n"
           msgOutput = msgOutput + stringTable.create(json, tbl_format) + "\n"
-          msgOutput = msgOutput + break_line + "\n"
+          msgOutput = msgOutput + break_line + "\n'"
           msg.send msgOutput
                     
         catch error
